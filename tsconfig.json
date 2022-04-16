@@ -5,8 +5,7 @@
         "strict": true,
         "noImplicitAny": false,
         "lib": [
-            "esnext",
-            "dom"
+            "esnext"
         ],
         "esModuleInterop": true
     }
