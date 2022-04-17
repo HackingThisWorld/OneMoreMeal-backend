@@ -1,5 +1,6 @@
 import { Router } from "express";
 import prisma from "../lib/prisma";
+import sendMessage from "../lib/twilio/sendMessage";
 const router = Router();
 
 router.get("/requests", async (req, res) => {
@@ -17,6 +18,11 @@ router.put("/requests", async (req, res) => {
     where: { id },
     data: { completed: true },
   });
+
+  await sendMessage(
+    `Our volunteers are coming to your location for pickup`,
+    request.phone_number
+  );
 
   res.json(request);
   return;

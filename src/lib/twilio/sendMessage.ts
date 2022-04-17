@@ -1,10 +1,10 @@
 import twilioClient from "./twilio";
 
-export default async function sendMessage() {
+export default async function sendMessage(message: string, number: string) {
   try {
     const { sid } = await twilioClient.messages.create({
-      body: "Hello from Twilio!",
-      to: process.env.TWILIO_TO_NUMBER!!,
+      body: message,
+      to: `+91${number}`,
       from: process.env.TWILIO_FROM_NUMBER!!,
     });
 
