@@ -25,6 +25,11 @@ router.post("/requests", async (req, res) => {
       },
     });
 
+    await sendMessage(
+      `Pickup request created by ${name}\n\nShop Name: ${shop_name}\nPhone Number: ${phone_number}\nTime: ${pickup_time}\nAddress: ${address}\nNote: ${note}`,
+      process.env.ADMIN_MOBILE_NUMBER!!
+    );
+
     res.json({ success: true });
   } catch (error: any) {
     console.log(error);
