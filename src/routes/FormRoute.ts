@@ -28,7 +28,7 @@ router.post("/requests", async (req, res) => {
     const op = pickupDate.toLocaleString()
 
     await sendMessage(
-      `Pickup request created by ${name}\n\nShop Name: ${shop_name}\nPhone Number: ${phone_number}\nTime: ${op.split(",")[1];}\nAddress: ${address}\nNote: ${note}`,
+      `Pickup request created by ${name}\n\nShop Name: ${shop_name}\nPhone Number: ${phone_number}\nTime: ${op.split(",")[1]}\nAddress: ${address}\nNote: ${note}`,
       process.env.ADMIN_MOBILE_NUMBER!!
     );
 
