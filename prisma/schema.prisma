@@ -11,15 +11,16 @@ datasource db {
 }
 
 model Requests {
-  id          Int      @id @default(autoincrement())
-  name        String
-  shop_name   String
-  number      Int
-  address     String
-  pickup_time DateTime
-  note        String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
+  id           Int      @id @default(autoincrement())
+  name         String
+  shop_name    String
+  phone_number String
+  address      String
+  pickup_time  DateTime
+  note         String?
+  completed    Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @default(now())
 }
 
 model Donation {
