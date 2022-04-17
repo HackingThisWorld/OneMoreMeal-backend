@@ -31,5 +31,13 @@ model Donation {
   amount         Int
   createdAt      DateTime @default(now())
   updatedAt      DateTime @default(now())
+}
 
+model ContactRequests {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
